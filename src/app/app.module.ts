@@ -33,7 +33,7 @@ import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loa
     StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({
       logOnly: environment.production,
-    }),
+    connectInZone: true}),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },
